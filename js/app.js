@@ -168,7 +168,7 @@ async function Search(query, page=1, size=10) {
         const json = await res.json();
         pagination.style.visibility = 'visible';
         generateRender(json);
-        searchTitle.innerText = `Results for ${searchInput.value}`;
+        searchTitle.innerText = searchInput.value && searchInput.value!== '' ? `Results for ${searchInput.value}` : '';
     } catch(err) {
         searchTitle.innerText = '';
         main.innerHTML = `<div style="width:100%;background:white"><p style="text-align:center">Something went wrong. please try again!</p></div>`;
